@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <button onclick="Ind()">Ind</button>
+    <br>
+    <br>
+    <button onclick="Aus()">Aus</button>
+    <br>
+    <br>
+    <button onclick="res()">Reset</button>
+    <script>
+        const socket = io();
+        function Aus(){
+            socket.emit("Aus")
+        }
+        function Ind(){
+            socket.emit("Ind")
+        }
+        function res(){
+            socket.emit("res")
+        }
+      </script>
+</body>
+</html>

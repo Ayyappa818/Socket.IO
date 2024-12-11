@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <h1>India <span id="d1">0</span></h1>
+    <h1>Australia <span id="d2">0</span></h1>
+    <script>
+        const socket = io();
+        socket.on('score',(value)=>{
+            document.getElementById('d1').innerHTML=value.Ind
+            document.getElementById('d2').innerHTML=value.Aus
+
+        })
+        socket.on('scor',(value)=>{
+            document.getElementById('d1').innerHTML=0
+            document.getElementById('d2').innerHTML=0
+        })
+      </script>
+</body>
+</html>
